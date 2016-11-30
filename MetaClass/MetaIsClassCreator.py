@@ -1,8 +1,7 @@
-#!/usr/python
+#!/usr/bin/python3
 
 class ObjectCreator(object):
     pass
-    
 
 my_object = ObjectCreator()
 print(my_object)
@@ -11,8 +10,6 @@ print(ObjectCreator)
 
 def echo_hello11(self):
     print("hex")
-
-
 
 Foo = type('Foo',(),{'bar':True, 'echo_hello': echo_hello11})
 
@@ -24,10 +21,8 @@ f.echo_hello()
 def echo_hello(self):
     print("hello!")
 
-
 Foo.echo_hello = echo_hello
 f.echo_hello()
-
 
 def upper_attr(future_class_name, future_class_parents, future_class_attr):
     '''
@@ -39,19 +34,18 @@ def upper_attr(future_class_name, future_class_parents, future_class_attr):
             uppercase_attr[name.upper()] = val
         else:
             uppercase_attr[name] = val
-            
+
     return type(future_class_name, future_class_parents, uppercase_attr)
 
 class UpperCastAttr(type):
     def __new__(cls, name, bases, attrs):
         return upper_attr(name, bases, attrs)
 
-
 class BigAttr(metaclass=UpperCastAttr):
-    def __init(self, **kw):
-        super(Model, self).__init__(**kw)
+    def __init__(self, **kw):
+        super().__init__(**kw)
 
-    def print_hello(slef):
+    def print_hello(self):
         print("class big hello")
 
 
