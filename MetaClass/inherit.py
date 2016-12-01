@@ -40,9 +40,43 @@ class CNeedInitDirve(CNeedInitBase):
     def printClassName(self):
         print(self.data)
         print(self.DirveData)
-
+ 
 InitBase = CNeedInitBase()
 InitBase.printClassName()
 
 InitDirve = CNeedInitDirve()
 InitDirve.printClassName()
+
+#多重继承
+'''
+当两个基类有方法重名的时候，python3会按照您继承类的从左到右的顺序查找您调用的方法
+B2(A2,A1)。在这个例子中，是先找A2，然后再找A1。
+'''
+class A1(object):
+    def func1(self):
+        print("A1's func1")
+    def func2(self):
+        print("A1's func2")
+
+class A2(object):
+    def func1(self):
+        print("A2's func1")
+    def func2(self):
+        print("A2's func2")
+
+class B1(A1, A2):
+    def func1(self):
+        print("B1's func1")
+
+class B2(A2, A1):
+    def func2(self):
+        print("B2's func2")
+
+b1 = B1()
+b1.func1()  #B1's func1
+b1.func2()  #A1's func2
+
+b2 = B2()
+b2.func1() #A2's func1
+b2.func2() #B2's func2
+
