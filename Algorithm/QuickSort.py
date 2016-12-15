@@ -4,7 +4,7 @@ import random
 
 srcList = [random.randrange(0, 100, 1) for x in range(0, 10)]
 
-def QuickSort(list , left , right):
+def QuickSort(list, left, right):
     pivot = list[left] # 起始点作为参考点 
     #pivot = list[(right - left) // 2 ] #也可以选取中间点
     subleft = left
@@ -13,7 +13,7 @@ def QuickSort(list , left , right):
         subleft += 1
     while list[subright] > pivot:
         subright -= 1
-    if subleft <= subright: # == 的时候需要 偏移下标
+    if subleft <= subright: # == 的时候需要 偏移下标 .. []...中间的值已经在正确的位置了不需要加入分区递归
         tmp = list[subright]
         list[subright] = list[subleft]
         subright -= 1
