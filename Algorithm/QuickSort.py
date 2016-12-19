@@ -7,7 +7,7 @@ import random
 srcList = [4,6,7,9,5,3,1,2]
 def QuickSort(list, left, right):
     #pivot = list[left] # 起始点作为参考点 
-    pivot = list[int((right + left) // 2) ] #也可以选取中间点
+    pivot = list[int((right + left) // 2) ] #也可以选取中间点 这个地方一开始使用了减法 找了好久 脑子进水了
     subleft = left
     subright = right
     while subleft <= subright:

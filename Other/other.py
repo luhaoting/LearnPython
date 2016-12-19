@@ -7,4 +7,4 @@ def space():
 space()
 
 print(100.11123//2)
-
+print(r"/n\n\n\n")
